@@ -1,0 +1,111 @@
+		/* Button Hover Efficts */
+
+.cls_btn {
+	content: 'Starten!';
+	position: relative;
+	background: rgb(255, 255, 255);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 0.1em;
+	font-weight: 400;
+	color: #e4e6e4;
+	padding: 10px 40px;
+	transition: 0.5s;
+}
+
+.cls_btn:hover{
+	letter-spacing: 0.25em;
+	background: #75e44f;
+	color: #75e44f;
+	box-shadow: 0 0 35px #75e44f;
+}
+
+.cls_btn:before {
+	content: '';
+	position: absolute;
+	inset: 2px;
+	background: #162761;
+}
+
+.cls_btn button {
+	position: relative;
+	z-index: 1;
+}
+
+.cls_btn i {
+	position: absolute;
+	inset: 0;
+	display: block;
+}
+
+.cls_btn i::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 80%;
+	width: 10px;
+	height: 4px;
+	background: #162761;
+	transform: translateX(-50%) skewX(324deg);
+	transition: 0.5s;
+}
+
+.cls_btn:hover i::before {
+	width: 20px;
+	left: 20%;
+}
+
+.cls_btn i::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 20%;
+	width: 10px;
+	height: 4px;
+	background: #162761;
+	transform: translateX(-50%) skewX(324deg);
+	transition: 0.5s;
+}
+
+.cls_btn:hover i::after {
+	width: 20px;
+	left: 80%;
+}
+
+	/* Email Input */
+
+.input-group {
+	position: relative;
+}
+
+.input {
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	font: inherit;
+	color: #162761;
+	background-color: transparent;
+	outline: 2px solid #162761;
+}
+
+.input-label {
+	position: absolute;
+	top: 6;
+	left: 200;
+	transform: translate(10px, 10px);
+	transition: transform .25s;
+	text-align: center;
+}
+
+.input:focus+.input-label,
+.input:valid+.input-label {
+	transform: translate(10px, -14px) scale(.8);
+	color: #d1c5fc;
+	padding-inline: 5px;
+	background-color: #242329;
+}
+
+.input:is(:focus, :valid) {
+	outline-color: #d1c5fc;
+}
